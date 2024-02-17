@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex items-center justify-between ">
             <div className="text-white">
               <p className="text-2xl">Hoje</p>
-              <p className="text-xs">6 Tasks</p>
+              <p className="text-xs">6 Tarefas</p>
             </div>
             <Button className="bg-white text-projeto-Roxo hover:bg-white">
               Nova tarefa
