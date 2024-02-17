@@ -1,14 +1,14 @@
 import React from 'react';
-import { Card, CardContent, CardHeader } from '../ui/card';
+import { Card, CardContent, CardHeader } from './ui/card';
 import { CircleUserRound, LayoutGrid } from 'lucide-react';
-import { Button } from '../ui/button';
+import { Button } from './ui/button';
 
 const Header = () => {
   return (
     <div>
       <Card>
         <CardHeader className="bg-projeto-Roxo h-auto py-8">
-          <div className="flex items-center justify-between pb-6">
+          <div className="flex items-center justify-between pb-8">
             <LayoutGrid className="text-white" />
             <p className="text-white">16 de Fevereiro</p>
             <CircleUserRound className="text-white" />
@@ -18,7 +18,9 @@ const Header = () => {
               <p className="text-2xl">Hoje</p>
               <p className="text-xs">6 Tasks</p>
             </div>
-            <Button className="bg-white text-projeto-Roxo hover:bg-white">Nova tarefa</Button>
+            <Button className="bg-white text-projeto-Roxo hover:bg-white">
+              Nova tarefa
+            </Button>
           </div>
         </CardHeader>
       </Card>

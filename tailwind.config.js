@@ -26,7 +26,7 @@ module.exports = {
         projeto: {
           Roxo: '#a263eb',
           RoxoClaro: '#a187c7',
-          Rosa: '#e8daf9',
+          Rosa: '#E6DCF2',
           CinzaEscuro: '#3b383f',
           CinzaClaro: '#746e74',
         },
