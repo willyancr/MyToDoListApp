@@ -18,7 +18,7 @@ const Header = () => {
               <p className="text-2xl">Hoje</p>
               <p className="text-xs">6 Tasks</p>
             </div>
-            <Button className="bg-white text-projeto-Roxo">Nova tarefa</Button>
+            <Button className="bg-white text-projeto-Roxo hover:bg-white">Nova tarefa</Button>
           </div>
         </CardHeader>
       </Card>
