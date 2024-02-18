@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, CardContent, CardHeader } from './ui/card';
+import { Card, CardHeader } from './ui/card';
 import { CircleUserRound, LayoutGrid } from 'lucide-react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -18,9 +19,11 @@ const Header = () => {
               <p className="text-2xl">Hoje</p>
               <p className="text-xs">6 Tarefas</p>
             </div>
-            <Button className="bg-white text-projeto-Roxo hover:bg-white">
-              Nova tarefa
-            </Button>
+            <Link to="/criartarefa">
+              <Button className="bg-white text-projeto-Roxo hover:bg-white">
+                Nova tarefa
+              </Button>
+            </Link>
           </div>
         </CardHeader>
       </Card>

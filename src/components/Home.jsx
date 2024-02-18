@@ -1,7 +1,7 @@
-import React from 'react'
-import Header from './components/Header';
-import Data from './components/Data';
-import MyTasks from './components/MyTasks';
+import React from 'react';
+import Header from './Header';
+import Data from './Data';
+import MyTasks from './MyTasks';
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
       <Data />
       <MyTasks />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
