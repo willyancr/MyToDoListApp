@@ -8,16 +8,14 @@ import ChooseActivity from './ChooseActivity';
 const CreateTask = () => {
   return (
     <div>
-      <Card className="border-none">
-        <CardContent className="h-auto pt-8">
-          <div className="flex items-center justify-between pb-8">
+      <Card className="border-none ">
+        <CardContent className="bg-projeto-Roxo h-auto pt-8">
+          <div className="flex items-center text-white justify-between pb-8">
             <Link to="/">
-              <Home className="text-projeto-CinzaEscuro" />
+              <Home size={28}/>
             </Link>
-            <p className="text-projeto-CinzaEscuro font-bold text-xl">
-              Criar Tarefa
-            </p>
-            <CircleUserRound className="text-projeto-CinzaEscuro" />
+            <p className="font-semibold text-xl">Criar Tarefa</p>
+            <CircleUserRound size={28}/>
           </div>
         </CardContent>
       </Card>

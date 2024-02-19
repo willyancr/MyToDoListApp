@@ -7,7 +7,9 @@ import {
   UtensilsCrossed,
   Briefcase,
   Music4,
+  Plus,
 } from 'lucide-react';
+import { Button } from './ui/button';
 
 const ChooseActivity = () => {
   const activitys = [
@@ -31,7 +33,7 @@ const ChooseActivity = () => {
         {activitys.map((activity) => (
           <Card
             key={activity.name}
-            className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4"
+            className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4 static"
           >
             <div className="grid grid-cols-[60px_auto_1fr] items-center gap-1">
               <div className="text-projeto-Roxo justify-self-center">
@@ -48,6 +50,9 @@ const ChooseActivity = () => {
           </Card>
         ))}
       </div>
+      <Button className="bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
+        <Plus strokeWidth={3} />
+      </Button>
     </div>
   );
 };

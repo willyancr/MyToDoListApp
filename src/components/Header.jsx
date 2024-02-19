@@ -8,14 +8,14 @@ const Header = () => {
   return (
     <div>
       <Card>
-        <CardHeader className="bg-projeto-Roxo h-auto py-8">
+        <CardHeader className="bg-projeto-Roxo h-auto py-8 text-white">
           <div className="flex items-center justify-between pb-8">
-            <LayoutGrid className="text-white" />
-            <p className="text-white">16 de Fevereiro</p>
-            <CircleUserRound className="text-white" />
+            <LayoutGrid size={28} />
+            <p className="text-xl">16 de Fevereiro</p>
+            <CircleUserRound size={28} />
           </div>
           <div className="flex items-center justify-between ">
-            <div className="text-white">
+            <div>
               <p className="text-2xl">Hoje</p>
               <p className="text-xs">6 Tarefas</p>
             </div>
