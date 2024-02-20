@@ -36,7 +36,7 @@ const Calender = () => {
             placeholder="Descrição da Tarefa..."
             className="border-projeto-CinzaClaro outline-none "
           />
-          <Button className="bg-projeto-Roxo text-white hover:bg-projeto-Rosa">
+          <Button className="bg-projeto-Roxo text-white hover:bg-projeto-RoxoClaro py-8">
             <span className="text-xl">Criar Tarefa</span>
           </Button>
         </form>
