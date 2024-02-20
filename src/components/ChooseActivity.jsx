@@ -10,6 +10,7 @@ import {
   Plus,
 } from 'lucide-react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const ChooseActivity = () => {
   const activitys = [
@@ -35,24 +36,29 @@ const ChooseActivity = () => {
             key={activity.name}
             className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4 static"
           >
-            <div className="grid grid-cols-[60px_auto_1fr] items-center gap-1">
+            <div className="grid grid-cols-[60px_auto] items-center gap-1">
               <div className="text-projeto-Roxo justify-self-center">
                 {icons[activity.icon]}
               </div>
-              <div className=" ">
-                <h3 className="text-xl font-bold">{activity.name}</h3>
-                <p className="text-projeto-CinzaClaro">5 atividades</p>
-              </div>
-              <div className="text-projeto-Roxo justify-self-end ">
-                <ChevronRight size={30} />
-              </div>
+              <Link
+                to="/criartarefa/calendario"
+                className="grid grid-cols-2 items-center"
+              >
+                <div className=" ">
+                  <h3 className="text-xl font-bold">{activity.name}</h3>
+                  <p className="text-projeto-CinzaClaro">5 atividades</p>
+                </div>
+                <div className="text-projeto-Roxo justify-self-end ">
+                  <ChevronRight size={30} />
+                </div>
+              </Link>
             </div>
           </Card>
         ))}
       </div>
-      <Button className="bg-projeto-Roxo hover:bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
+      {/* <Button className="bg-projeto-Roxo hover:bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
         <Plus strokeWidth={3} />
-      </Button>
+      </Button> */}
     </div>
   );
 };

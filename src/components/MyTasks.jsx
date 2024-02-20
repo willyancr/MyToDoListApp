@@ -17,8 +17,8 @@ const MyTasks = () => {
                 <h3 className="text-xl font-bold">Tarefa 1</h3>
                 <p>Descrição</p>
               </div>
-              <div className="flex-1 text-right">
-                <Checkbox className="border-projeto-Roxo "></Checkbox>
+              <div className="flex-1 text-right mr-1">
+                <Checkbox className="border-projeto-Roxo h-5 w-5" />
               </div>
             </div>
           </Card>
