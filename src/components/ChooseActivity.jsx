@@ -28,7 +28,7 @@ const ChooseActivity = () => {
     Music4: <Music4 size={30} />,
   };
   return (
-    <div className="py-4 px-5">
+    <main className="py-4 px-5">
       <h2 className="text-xl font-bold">Escolha uma atividade</h2>
       <div className="pt-4">
         {activitys.map((activity) => (
@@ -59,7 +59,7 @@ const ChooseActivity = () => {
       {/* <Button className="bg-projeto-Roxo hover:bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
         <Plus strokeWidth={3} />
       </Button> */}
-    </div>
+    </main>
   );
 };
 

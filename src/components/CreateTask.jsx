@@ -7,21 +7,25 @@ import ChooseActivity from './ChooseActivity';
 
 const CreateTask = () => {
   return (
-    <div>
-      <Card className="border-none ">
-        <CardContent className="bg-projeto-Roxo h-auto pt-8">
-          <div className="flex items-center text-white justify-between pb-8">
-            <Link to="/">
-              <Home size={28}/>
-            </Link>
-            <p className="font-semibold text-xl">Criar Tarefa</p>
-            <CircleUserRound size={28}/>
-          </div>
-        </CardContent>
-      </Card>
+    <>
+      <header>
+        <Card className="border-none ">
+          <CardContent className="bg-projeto-Roxo h-auto pt-8">
+            <div className="flex items-center text-white justify-between pb-8">
+              <Link to="/">
+                <Home size={28} />
+              </Link>
+              <p className="font-semibold text-xl">Criar Tarefa</p>
+              <CircleUserRound size={28} />
+            </div>
+          </CardContent>
+        </Card>
+      </header>
       <Data />
-      <ChooseActivity />
-    </div>
+      <main>
+        <ChooseActivity />
+      </main>
+    </>
   );
 };
 
