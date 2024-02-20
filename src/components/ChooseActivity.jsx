@@ -50,7 +50,7 @@ const ChooseActivity = () => {
           </Card>
         ))}
       </div>
-      <Button className="bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
+      <Button className="bg-projeto-Roxo hover:bg-projeto-Roxo text-white py-6 absolute bottom-8 right-5">
         <Plus strokeWidth={3} />
       </Button>
     </div>

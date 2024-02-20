@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div>
-      <Card>
+      <Card className="border-none ">
         <CardHeader className="bg-projeto-Roxo h-auto py-8 text-white">
           <div className="flex items-center justify-between pb-8">
             <LayoutGrid size={28} />
