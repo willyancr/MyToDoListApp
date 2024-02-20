@@ -4,6 +4,9 @@ import { ArrowLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Button } from './ui/button';
 
 const Calender = () => {
   const [value, onChange] = React.useState(new Date());
@@ -23,7 +26,20 @@ const Calender = () => {
         </Card>
       </header>
       <main className="py-4 px-5">
-        <Calendar onChange={onChange} value={value}  />
+        <Calendar onChange={onChange} value={value} className="rounded-md" />
+        <form className="flex flex-col gap-4 pt-4">
+          <Input
+            placeholder="Nome da Tarefa"
+            className="border-projeto-CinzaClaro outline-none "
+          />
+          <Textarea
+            placeholder="Descrição da Tarefa..."
+            className="border-projeto-CinzaClaro outline-none "
+          />
+          <Button className="bg-projeto-Roxo text-white hover:bg-projeto-Rosa">
+            <span className="text-xl">Criar Tarefa</span>
+          </Button>
+        </form>
       </main>
     </>
   );
