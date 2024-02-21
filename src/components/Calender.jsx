@@ -7,6 +7,7 @@ import 'react-calendar/dist/Calendar.css';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
+import FormsCreateTask from './FormsCreateTask';
 
 const Calender = () => {
   const [value, onChange] = React.useState(new Date());
@@ -27,19 +28,7 @@ const Calender = () => {
       </header>
       <main className="py-4 px-5">
         <Calendar onChange={onChange} value={value} className="rounded-md" />
-        <form className="flex flex-col gap-4 pt-4">
-          <Input
-            placeholder="Nome da Tarefa"
-            className="border-projeto-CinzaClaro outline-none "
-          />
-          <Textarea
-            placeholder="Descrição da Tarefa..."
-            className="border-projeto-CinzaClaro outline-none "
-          />
-          <Button className="bg-projeto-Roxo text-white hover:bg-projeto-RoxoClaro py-8">
-            <span className="text-xl">Criar Tarefa</span>
-          </Button>
-        </form>
+        <FormsCreateTask />
       </main>
     </>
   );
