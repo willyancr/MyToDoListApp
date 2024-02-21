@@ -22,21 +22,30 @@ const FormsCreateTask = () => {
   return (
     <form
       onSubmit={handleSubmit(handleCreateTask)}
-      className="flex flex-col gap-2 pt-4"
+      className="flex flex-col  pt-4 "
     >
-      <Input
-        className="border-projeto-CinzaClaro outline-none "
-        placeholder="Nome da Tarefa"
-        id="name"
-        {...register('name')}
-      />
-      <span className="text-red-500 text-sm">{errors.name?.message}</span>
-      <Textarea
-        className="border-projeto-CinzaClaro outline-none "
-        placeholder="Descrição da Tarefa..."
-        id="description"
-        {...register('description')}
-      />
+      <div className="space-y-2 pb-4">
+        <Input
+          className="border-projeto-CinzaClaro outline-none "
+          placeholder="Nome da Tarefa"
+          id="name"
+          {...register('name')}
+        />
+        <span className="text-red-500 text-sm m-0">{errors.name?.message}</span>
+        <Input
+          className="border-projeto-CinzaClaro outline-none"
+          type="time"
+          onChange={handleCreateTask}
+          id="time"
+          {...register('time')}
+        />
+        <Textarea
+          className="border-projeto-CinzaClaro outline-none "
+          placeholder="Descrição da Tarefa..."
+          id="description"
+          {...register('description')}
+        />
+      </div>
       <Button
         type="submit"
         className="bg-projeto-Roxo text-white hover:bg-projeto-RoxoClaro py-8"
