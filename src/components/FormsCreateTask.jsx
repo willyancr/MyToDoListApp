@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import useAddTask from '@/useAddTask';
+import { useTask } from '../TaskContext';
 
 const schema = yup.object({
   name: yup.string().min(3, 'Minimo de 3 caracteres'),
@@ -19,10 +19,10 @@ const FormsCreateTask = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const { addTask } = useTask();
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [time, setTime] = React.useState('');
-  const { addTask } = useAddTask();
 
   function handleCreateTask() {
     if (!name || !time || !description) return;
@@ -66,9 +66,9 @@ const FormsCreateTask = () => {
       </div>
       <Button
         type="submit"
-        className="bg-projeto-Roxo text-white hover:bg-projeto-RoxoClaro py-8"
+        className="bg-projeto-Roxo text-white text-xl hover:bg-projeto-RoxoClaro py-8"
       >
-        <span className="text-xl">Criar Tarefa</span>
+        Criar Tarefa
       </Button>
     </form>
   );

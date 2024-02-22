@@ -1,10 +1,9 @@
 import React from 'react';
 import { Card } from './ui/card';
 import { Checkbox } from './ui/checkbox';
-import useTasks from '@/useTasks';
-
+import { useTask } from '../TaskContext';
 const MyTasks = () => {
-  const { tasks } = useTasks();
+  const { tasks } = useTask();
   return (
     <div className="py-4 px-5">
       <h2 className="text-xl font-bold">Minhas Tarefas</h2>
