@@ -2,7 +2,8 @@ import React from 'react';
 import { Card } from './ui/card';
 import { Checkbox } from './ui/checkbox';
 import { useTask } from '../TaskContext';
-import { Search } from 'lucide-react';
+import { Check, Search, X } from 'lucide-react';
+import { Button } from './ui/button';
 
 const MyTasks = () => {
   const { tasks } = useTask();
@@ -33,7 +34,12 @@ const MyTasks = () => {
                   <p>{task.description}</p>
                 </div>
                 <div className="text-right mr-1">
-                  <Checkbox className="border-projeto-Roxo h-5 w-5" />
+                  <Button className="px-2 mr-1 bg-green-700/75 size-7">
+                    <Check />
+                  </Button>
+                  <Button className="px-2 py-1 bg-red-700/75 size-7">
+                    <X />
+                  </Button>
                 </div>
               </div>
             </Card>

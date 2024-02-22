@@ -28,6 +28,12 @@ const Data = () => {
           <span>Fev</span>
         </div>
       </Button>
+      <Button className="bg-projeto-Rosa text-projeto-CinzaEscuro py-7 px-5 hover:bg-projeto-Rosa">
+        <div className="flex items-center flex-col">
+          <span>16</span>
+          <span>Fev</span>
+        </div>
+      </Button>
     </div>
   );
 };
