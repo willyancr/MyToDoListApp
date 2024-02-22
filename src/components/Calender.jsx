@@ -4,9 +4,6 @@ import { ArrowLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Button } from './ui/button';
 import FormsCreateTask from './FormsCreateTask';
 
 const Calender = () => {

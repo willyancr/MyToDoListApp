@@ -5,11 +5,12 @@ import { Button } from './ui/button';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import useAddTask from '@/useAddTask';
 
 const schema = yup.object({
-  name: yup.string().required('Nome obrigatório').min(3, 'Nome muito curto'),
-  description: yup.string(),
+  name: yup.string().min(3, 'Minimo de 3 caracteres'),
 });
+
 const FormsCreateTask = () => {
   const {
     register,
@@ -18,7 +19,18 @@ const FormsCreateTask = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  function handleCreateTask() {}
+  const [name, setName] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [time, setTime] = React.useState('');
+  const { addTask } = useAddTask();
+
+  function handleCreateTask() {
+    if (!name || !time || !description) return;
+    addTask(name, time, description);
+    setName('');
+    setTime('');
+    setDescription('');
+  }
   return (
     <form
       onSubmit={handleSubmit(handleCreateTask)}
@@ -26,24 +38,30 @@ const FormsCreateTask = () => {
     >
       <div className="space-y-2 pb-4">
         <Input
+          {...register('name')}
           className="border-projeto-CinzaClaro outline-none "
           placeholder="Nome da Tarefa"
+          type="text"
           id="name"
-          {...register('name')}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <span className="text-red-500 text-sm m-0">{errors.name?.message}</span>
         <Input
+          {...register('time')}
           className="border-projeto-CinzaClaro outline-none"
           type="time"
-          onChange={handleCreateTask}
           id="time"
-          {...register('time')}
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
         />
         <Textarea
+          {...register('description')}
           className="border-projeto-CinzaClaro outline-none "
           placeholder="Descrição da Tarefa..."
           id="description"
-          {...register('description')}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <Button
