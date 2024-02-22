@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card } from './ui/card';
-import { Checkbox } from './ui/checkbox';
 import { useTask } from '../TaskContext';
 import { Check, Search, X } from 'lucide-react';
 import { Button } from './ui/button';
