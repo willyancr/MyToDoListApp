@@ -11,7 +11,7 @@ const MyTasks = () => {
   return (
     <div className="py-4 px-5">
       <h2 className="text-xl font-bold">
-        Minhas Tarefas <span>({tasks?.length})</span>
+        Minhas Tarefas 
       </h2>
       <main className="pt-4">
         {tasks?.length === 0 ? (

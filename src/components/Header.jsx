@@ -3,8 +3,10 @@ import { Card, CardHeader } from './ui/card';
 import { CircleUserRound, LayoutGrid } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
+import { useTask } from '../TaskContext';
 
 const Header = () => {
+  const { tasks } = useTask();
   return (
     <div>
       <Card className="border-none ">
@@ -17,7 +19,11 @@ const Header = () => {
           <div className="flex items-center justify-between ">
             <div>
               <p className="text-2xl">Hoje</p>
-              <p className="text-xs">6 Tarefas</p>
+              <p className="text-xs">
+                {tasks?.length <= 1
+                  ? `${tasks?.length} Tarefa`
+                  : `${tasks?.length} Tarefas`}
+              </p>
             </div>
             <Link to="/criartarefa">
               <Button className="bg-white text-projeto-Roxo hover:bg-white">
