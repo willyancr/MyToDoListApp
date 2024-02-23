@@ -15,30 +15,21 @@ export const TaskProvider = ({ children }) => {
       };
       const updatedTasks = [...prevTasks, newTask];
       localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-      return updatedTasks;
+      setTasks(updatedTasks);
     });
   };
 
-  window.addEventListener('load', loadTasks);
-  function loadTasks() {
-    const savedTasks = localStorage.getItem('tasks');
-    if (savedTasks) {
-      setTasks(JSON.parse(savedTasks));
-    } else {
-      localStorage.setItem('tasks', JSON.stringify([]));
-      setTasks([]);
-      console.log('Nenhuma tarefa salva');
-    }
-  }
+  React.useEffect(() => {
+    const loadTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(loadTasks);
+  }, []);
 
   const removeTask = (id) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.filter((task) => task.id !== id);
-      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-      return updatedTasks;
-    });
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    setTasks(updatedTasks);
   };
-  
+
   return (
     <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
       {children}
