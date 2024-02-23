@@ -30,9 +30,15 @@ export const TaskProvider = ({ children }) => {
       console.log('Nenhuma tarefa salva');
     }
   }
+
   const removeTask = (id) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== id);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
   };
+  
   return (
     <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
       {children}
