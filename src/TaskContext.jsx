@@ -4,6 +4,7 @@ const TaskContext = React.createContext();
 
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = React.useState([]);
+
   const addTask = (name, time, description) => {
     setTasks((prevTasks) => [
       ...prevTasks,
@@ -15,8 +16,11 @@ export const TaskProvider = ({ children }) => {
       },
     ]);
   };
+  const removeTask = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
   return (
-    <TaskContext.Provider value={{ tasks, addTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
       {children}
     </TaskContext.Provider>
   );

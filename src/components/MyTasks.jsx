@@ -5,7 +5,7 @@ import { Check, Search, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const MyTasks = () => {
-  const { tasks } = useTask();
+  const { tasks, removeTask } = useTask();
 
   return (
     <div className="py-4 px-5">
@@ -34,7 +34,10 @@ const MyTasks = () => {
                   <Button className="px-2 mr-1 bg-green-700/75 size-7">
                     <Check />
                   </Button>
-                  <Button className="px-2 py-1 bg-red-700/75 size-7">
+                  <Button
+                    onClick={() => removeTask(task.id)}
+                    className="px-2 py-1 bg-red-700/75 size-7"
+                  >
                     <X />
                   </Button>
                 </div>
