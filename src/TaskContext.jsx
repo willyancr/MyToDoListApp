@@ -15,19 +15,20 @@ export const TaskProvider = ({ children }) => {
       };
       const updatedTasks = [...prevTasks, newTask];
       localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-      setTasks(updatedTasks);
+      return updatedTasks;
     });
   };
-
   React.useEffect(() => {
-    const loadTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    setTasks(loadTasks);
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(savedTasks);
   }, []);
 
   const removeTask = (id) => {
-    const updatedTasks = tasks.filter((task) => task.id !== id);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    setTasks(updatedTasks);
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== id);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
   };
 
   return (

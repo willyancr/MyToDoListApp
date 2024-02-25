@@ -11,7 +11,7 @@ const MyTasks = () => {
     <div className="py-4 px-5">
       <h2 className="text-xl font-bold">Minhas Tarefas</h2>
       <main className="pt-4">
-        {tasks?.length === 0 ? (
+        {tasks.length === 0 ? (
           <p className="text-sm flex items-center gap-2 italic">
             <Search size={16} />
             Nenhuma tarefa cadastrada...
