@@ -4,9 +4,9 @@ import { ArrowLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import FormsCreateTask from './FormsCreateTask';
-
+import Calendar from 'react-calendar';
 const Calender = () => {
-  // const [value, onChange] = React.useState(new Date());
+  const [value, onChange] = React.useState(new Date());
   return (
     <>
       <header>
@@ -23,9 +23,8 @@ const Calender = () => {
         </Card>
       </header>
       <main className="py-4 px-5">
-          
-          <FormsCreateTask />
-        
+        <Calendar onChange={onChange} value={value} className="rounded-md" />
+        <FormsCreateTask />
       </main>
     </>
   );
