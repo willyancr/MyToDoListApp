@@ -24,7 +24,7 @@ const Header = () => {
     return `${tasks.length} Tarefas`;
   };
   return (
-    <div>
+    <div className="fixed w-full z-50 top-0">
       <Card className="border-none ">
         <CardHeader className="bg-projeto-Roxo h-auto py-8 text-white">
           <div className="flex items-center justify-between pb-8">

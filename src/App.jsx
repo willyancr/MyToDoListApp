@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import CreateTask from './components/CreateTask';
-import Calender from './components/Calender';
+import CreateTask from './components/ChooseActivity';
+import Calender from './components/CreateTask';
 import { TaskProvider } from './TaskContext';
 import Footer from './components/Footer';
 

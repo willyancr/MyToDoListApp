@@ -1,42 +1,29 @@
 import React from 'react';
-import { Card } from './ui/card';
-import { ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useActivitys } from './hooks/useActivitys';
+import { Card, CardContent } from './ui/card';
+import { CircleUserRound, ListChecks } from 'lucide-react';
+import Data from './Data';
+import CardsChooseActivity from './CardsChooseActivity';
 
-const ChooseActivity = () => {
-  const { activitys, icons } = useActivitys();
+const CreateTask = () => {
   return (
-    <main className="py-4 px-5">
-      <h2 className="text-xl font-bold">Escolha uma atividade</h2>
-      <div className="pt-4">
-        {activitys.map((activity) => (
-          <Card
-            key={activity.name}
-            className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4 static"
-          >
-            <div className="grid grid-cols-[60px_auto] items-center gap-1">
-              <div className="text-projeto-Roxo justify-self-center">
-                {icons[activity.icon]}
-              </div>
-              <Link
-                to="/criartarefa/calendario"
-                className="grid grid-cols-2 items-center"
-              >
-                <div className=" ">
-                  <h3 className="text-xl font-bold">{activity.name}</h3>
-                  <p className="text-projeto-CinzaClaro">5 atividades</p>
-                </div>
-                <div className="text-projeto-Roxo justify-self-end ">
-                  <ChevronRight size={30} />
-                </div>
-              </Link>
+    <>
+      <header className="fixed w-full z-50 top-0">
+        <Card className="border-none ">
+          <CardContent className="bg-projeto-Roxo h-auto pt-8">
+            <div className="flex items-center text-white justify-between pb-8">
+              <ListChecks size={28} />
+              <p className="font-semibold text-xl">Criar Tarefa</p>
+              <CircleUserRound size={28} />
             </div>
-          </Card>
-        ))}
-      </div>
-    </main>
+          </CardContent>
+        </Card>
+      </header>
+      <main className="min-h-screen mt-[120px]">
+        <Data />
+        <CardsChooseActivity />
+      </main>
+    </>
   );
 };
 
-export default ChooseActivity;
+export default CreateTask;

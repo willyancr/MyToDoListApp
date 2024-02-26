@@ -6,9 +6,11 @@ import MyTasks from './MyTasks';
 const Home = () => {
   return (
     <div>
-      <Header />
-      <Data />
-      <MyTasks />
+      <Header className="fixed w-full z-50 top-0" />
+      <main className="min-h-screen mt-[180px]">
+        <Data />
+        <MyTasks />
+      </main>
     </div>
   );
 };
