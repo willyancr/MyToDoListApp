@@ -2,25 +2,29 @@ import React from 'react';
 import { Button } from './ui/button';
 
 const Data = () => {
-  const date = new Date();
-  const month = date.toLocaleDateString('pt-BR', { month: 'short' });
-  const [datas, setDatas] = React.useState([]);
+  //Calcula o mês atual apenas uma vez na montagem do componente
+  const month = React.useMemo(() => {
+    const date = new Date();
+    return date.toLocaleDateString('pt-BR', { month: 'short' });
+  }, []);
+
+  const [dates, setDates] = React.useState([]);
 
   React.useEffect(() => {
-    const datasTemp = [];
+    const futureDates = [];
     for (let i = 0; i < 5; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i);
-      datasTemp.push(date.toLocaleDateString('pt-BR', { day: 'numeric' }));
+      futureDates.push(date.toLocaleDateString('pt-BR', { day: 'numeric' }));
     }
-    setDatas(datasTemp);
+    setDates(futureDates);
   }, []);
 
   return (
     <div className="flex items-center justify-between py-4 px-5">
-      {datas.map((data, index) => (
+      {dates.map((data) => (
         <Button
-          key={index}
+          key={data}
           className="bg-projeto-Rosa text-projeto-CinzaEscuro py-7 px-4 hover:bg-projeto-Rosa"
         >
           <div className="flex items-center flex-col">
