@@ -1,5 +1,5 @@
-import { AreaChart, Home, Plus } from 'lucide-react';
 import React from 'react';
+import { Home, PieChart, Plus } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const Footer = () => {
       <Link to="/">
         <Home size={28} />
       </Link>
-      <AreaChart size={28} />
+      <PieChart size={28} />
       <Link to="/criartarefa">
         <Button className="px-2 py-1 bg-white size-9 hover:bg-white">
           <Plus className="text-projeto-Roxo" />
