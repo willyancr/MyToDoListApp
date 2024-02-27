@@ -30,7 +30,6 @@ const FormsCreateTask = () => {
   const [description, setDescription] = React.useState('');
   const [time, setTime] = React.useState('');
   const [calendar, setCalendar] = React.useState(new Date());
-  
   function handleCreateTask() {
     if (!name || !time || !description || !calendar) return;
     addTask(name, time, description, calendar);
