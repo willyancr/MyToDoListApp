@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import FormsCreateTask from './FormsCreateTask';
 import Calendar from 'react-calendar';
-const Calender = () => {
+const CreateTask = () => {
   const [value, onChange] = React.useState(new Date());
   return (
     <>
@@ -30,4 +30,4 @@ const Calender = () => {
   );
 };
 
-export default Calender;
+export default CreateTask;

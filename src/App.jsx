@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import CreateTask from './components/ChooseActivity';
-import Calender from './components/CreateTask';
+import ChooseActivity from './components/ChooseActivity';
+import CreateTask from './components/CreateTask';
 import { TaskProvider } from './TaskContext';
 import Footer from './components/Footer';
 
@@ -14,8 +14,8 @@ function App() {
         <TaskProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/criartarefa" element={<CreateTask />} />
-            <Route path="/criartarefa/calendario" element={<Calender />} />
+            <Route path="/criartarefa" element={<ChooseActivity />} />
+            <Route path="/criartarefa/calendario" element={<CreateTask />} />
           </Routes>
           <Footer />
         </TaskProvider>

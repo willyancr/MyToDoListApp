@@ -23,9 +23,9 @@ const CardsChooseActivity = () => {
                 to="/criartarefa/calendario"
                 className="grid grid-cols-2 items-center"
               >
-                <div className=" ">
+                <div>
                   <h3 className="text-xl font-bold">{activity.name}</h3>
-                  <p className="text-projeto-CinzaClaro">5 atividades</p>
+                  <p className="text-projeto-CinzaClaro"></p>
                 </div>
                 <div className="text-projeto-Roxo justify-self-end ">
                   <ChevronRight size={30} />

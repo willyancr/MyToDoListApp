@@ -9,11 +9,11 @@ import {
 
 export const useActivitys = () => {
   const activitys = [
-    { name: 'Esporte', icon: 'Dumbbell', to: '/' },
-    { name: 'Ideia', icon: 'Lightbulb', to: '/' },
-    { name: 'Comida', icon: 'UtensilsCrossed', to: '/' },
-    { name: 'Trabalho', icon: 'Briefcase', to: '/' },
-    { name: 'Música', icon: 'Music4', to: '/' },
+    { name: 'Esporte', icon: 'Dumbbell' },
+    { name: 'Ideia', icon: 'Lightbulb' },
+    { name: 'Comida', icon: 'UtensilsCrossed' },
+    { name: 'Trabalho', icon: 'Briefcase' },
+    { name: 'Música', icon: 'Music4' },
   ];
   const icons = {
     Dumbbell: <Dumbbell size={30} />,

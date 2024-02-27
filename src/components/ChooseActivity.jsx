@@ -4,7 +4,7 @@ import { CircleUserRound, ListChecks } from 'lucide-react';
 import Data from './Data';
 import CardsChooseActivity from './CardsChooseActivity';
 
-const CreateTask = () => {
+const ChooseActivity = () => {
   return (
     <>
       <header className="fixed w-full z-50 top-0">
@@ -26,4 +26,4 @@ const CreateTask = () => {
   );
 };
 
-export default CreateTask;
+export default ChooseActivity;
