@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TaskContext = React.createContext();
 
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = React.useState([]);
+  const [activitySelected, setActivitySelected] = React.useState(null);
+  const navigate = useNavigate();
 
   const addTask = (name, time, description, calendar) => {
     setTasks((prevTasks) => {
@@ -31,9 +34,15 @@ export const TaskProvider = ({ children }) => {
       return updatedTasks;
     });
   };
+  const handleActivity = (activity) => {
+    setActivitySelected(activity);
+    navigate('/atividade/criartarefa');
+  };
 
   return (
-    <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
+    <TaskContext.Provider
+      value={{ tasks, addTask, removeTask, activitySelected, handleActivity }}
+    >
       {children}
     </TaskContext.Provider>
   );

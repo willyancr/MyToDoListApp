@@ -20,6 +20,7 @@ const ChooseActivity = () => {
       </header>
       <main className="min-h-screen mt-[120px]">
         <Data />
+        <h2 className=" pt-4 px-5 text-xl font-bold">Escolha uma atividade</h2>
         <CardsChooseActivity />
       </main>
     </>
