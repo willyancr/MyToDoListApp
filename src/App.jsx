@@ -9,13 +9,13 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div >
+    <div>
       <BrowserRouter>
         <TaskProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/criartarefa" element={<ChooseActivity />} />
-            <Route path="/criartarefa/calendario" element={<CreateTask />} />
+            <Route path="/atividade" element={<ChooseActivity />} />
+            <Route path="/atividade/criartarefa" element={<CreateTask />} />
           </Routes>
           <Footer />
         </TaskProvider>

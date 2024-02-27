@@ -13,7 +13,7 @@ const CreateTask = () => {
         <Card className="border-none ">
           <CardContent className="bg-projeto-Roxo h-auto pt-8">
             <div className="flex items-center text-white justify-between pb-8">
-              <Link to="/criartarefa">
+              <Link to="/atividade">
                 <ArrowLeft size={28} />
               </Link>
               <p className="font-semibold text-xl">Criar Tarefa</p>

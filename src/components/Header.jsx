@@ -37,7 +37,7 @@ const Header = () => {
               <p className="text-2xl">Hoje</p>
               <p className="text-xs">{todayTasks(tasks)}</p>
             </div>
-            <Link to="/criartarefa">
+            <Link to="/atividade">
               <Button className="bg-white text-projeto-Roxo hover:bg-white">
                 Nova tarefa
               </Button>

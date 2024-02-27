@@ -20,7 +20,7 @@ const CardsChooseActivity = () => {
                 {icons[activity.icon]}
               </div>
               <Link
-                to="/criartarefa/calendario"
+                to="/atividade/criartarefa"
                 className="grid grid-cols-2 items-center"
               >
                 <div>
