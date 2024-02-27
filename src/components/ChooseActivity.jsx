@@ -12,7 +12,7 @@ const ChooseActivity = () => {
           <CardContent className="bg-projeto-Roxo h-auto pt-8">
             <div className="flex items-center text-white justify-between pb-8">
               <ListChecks size={28} />
-              <p className="font-semibold text-xl">Criar Tarefa</p>
+              <p className="font-semibold text-xl">Atividades</p>
               <CircleUserRound size={28} />
             </div>
           </CardContent>

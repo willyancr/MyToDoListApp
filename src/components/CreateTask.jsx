@@ -4,9 +4,7 @@ import { ArrowLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import FormsCreateTask from './FormsCreateTask';
-import Calendar from 'react-calendar';
 const CreateTask = () => {
-  const [value, onChange] = React.useState(new Date());
   return (
     <>
       <header className="fixed w-full z-50 top-0">
@@ -22,8 +20,7 @@ const CreateTask = () => {
           </CardContent>
         </Card>
       </header>
-      <main className="min-h-screen mt-[120px] py-4 px-5">
-        <Calendar onChange={onChange} value={value} className="rounded-md" />
+      <main className="min-h-screen mt-[110px] py-4 px-5">
         <FormsCreateTask />
       </main>
     </>

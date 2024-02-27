@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useTask } from '../TaskContext';
+import Calendar from 'react-calendar';
 
 const schema = yup.object({
   name: yup.string().min(3, 'Minimo de 3 caracteres'),
@@ -23,13 +24,15 @@ const FormsCreateTask = () => {
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [time, setTime] = React.useState('');
+  const [calendar, setCalendar] = React.useState(new Date());
 
   function handleCreateTask() {
-    if (!name || !time || !description) return;
-    addTask(name, time, description);
+    if (!name || !time || !description || !calendar) return;
+    addTask(name, time, description, calendar);
     setName('');
     setTime('');
     setDescription('');
+    setCalendar(new Date());
   }
   return (
     <form
@@ -37,9 +40,14 @@ const FormsCreateTask = () => {
       className="flex flex-col  pt-4 "
     >
       <div className="space-y-2 pb-4">
+        <Calendar
+          className="rounded-md "
+          value={calendar}
+          onChange={(e) => setCalendar(e.target.value)}
+        />
         <Input
           {...register('name')}
-          className="border-projeto-CinzaClaro outline-none "
+          className="border-projeto-CinzaClaro/50 outline-none "
           placeholder="Nome da Tarefa"
           type="text"
           id="name"
@@ -49,7 +57,7 @@ const FormsCreateTask = () => {
         <span className="text-red-500 text-sm m-0">{errors.name?.message}</span>
         <Input
           {...register('time')}
-          className="border-projeto-CinzaClaro outline-none"
+          className="border-projeto-CinzaClaro/50 outline-none"
           type="time"
           id="time"
           value={time}
@@ -57,7 +65,7 @@ const FormsCreateTask = () => {
         />
         <Textarea
           {...register('description')}
-          className="border-projeto-CinzaClaro outline-none "
+          className="border-projeto-CinzaClaro/50 outline-none "
           placeholder="Descrição da Tarefa..."
           id="description"
           value={description}
