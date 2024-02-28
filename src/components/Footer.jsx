@@ -10,7 +10,7 @@ const Footer = () => {
         <Home size={28} />
       </Link>
       <PieChart size={28} />
-      <Link to="/criartarefa">
+      <Link to="/atividade">
         <Button className="px-2 py-1 bg-white size-9 hover:bg-white">
           <Plus className="text-projeto-Roxo" />
         </Button>

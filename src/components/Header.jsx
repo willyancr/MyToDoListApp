@@ -26,8 +26,9 @@ const Header = () => {
   return (
     <div className="fixed w-full z-50 top-0">
       <Card className="border-none ">
-        <CardHeader className="bg-projeto-Roxo h-auto py-8 text-white">
+        <CardHeader className="bg-gradient-to-r from-projeto-Roxo to-projeto-RoxoClaro h-auto py-8 text-white">
           <div className="flex items-center justify-between pb-8">
+            {/* <img src="./src/image/logo1.png" alt="" className="w-14" /> */}
             <ListChecks size={28} />
             <p className="text-xl">{dateFormated}</p>
             <CircleUserRound size={28} />
