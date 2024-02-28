@@ -10,6 +10,7 @@ import Calendar from 'react-calendar';
 import { Card } from './ui/card';
 import { ChevronDown } from 'lucide-react';
 import { useActivitys } from './hooks/useActivitys';
+import CalenderPicker from './CalenderPicker';
 
 const schema = yup.object({
   name: yup.string().min(3, 'Minimo de 3 caracteres'),
@@ -44,11 +45,12 @@ const FormsCreateTask = () => {
       className="flex flex-col  pt-4 "
     >
       <div className="space-y-3 pb-4">
-        <Calendar
+        {/* <Calendar
           className="rounded-md "
           value={calendar}
           onChange={(e) => setCalendar(e.target.value)}
-        />
+        /> */}
+        <CalenderPicker />
         {activitySelected && (
           <Card
             className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-4 static"
