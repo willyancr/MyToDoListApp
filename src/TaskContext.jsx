@@ -8,7 +8,7 @@ export const TaskProvider = ({ children }) => {
   const [activitySelected, setActivitySelected] = React.useState(null);
   const navigate = useNavigate();
 
-  const addTask = (name, time, description, calendar) => {
+  const addTask = (name, time, description, calendar, activitys) => {
     setTasks((prevTasks) => {
       const newTask = {
         id: Math.floor(Math.random() * 1000),
@@ -16,6 +16,7 @@ export const TaskProvider = ({ children }) => {
         time,
         description,
         calendar,
+        activitys,
       };
       const updatedTasks = [...prevTasks, newTask];
       localStorage.setItem('tasks', JSON.stringify(updatedTasks));

@@ -26,13 +26,13 @@ const FormsCreateTask = () => {
   const { addTask, activitySelected } = useTask();
   const { icons } = useActivitys();
 
-  const [name, setName] = React.useState('');
-  const [description, setDescription] = React.useState('');
-  const [time, setTime] = React.useState('');
   const [calendar, setCalendar] = React.useState(new Date());
+  const [name, setName] = React.useState('');
+  const [time, setTime] = React.useState('');
+  const [description, setDescription] = React.useState('');
   function handleCreateTask() {
     if (!name || !time || !description || !calendar) return;
-    addTask(name, time, description, calendar);
+    addTask(name, time, description, calendar, activitySelected.name);
     setName('');
     setTime('');
     setDescription('');
@@ -51,8 +51,8 @@ const FormsCreateTask = () => {
         />
         {activitySelected && (
           <Card
-            key={activitySelected.name}
             className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-4 static"
+            key={activitySelected.name}
           >
             <div className="grid grid-cols-[60px_auto] items-center gap-1">
               <div className="text-projeto-Roxo justify-self-center">
