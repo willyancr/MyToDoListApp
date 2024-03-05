@@ -18,10 +18,7 @@ const CardsMyTasks = () => {
           <div className="grid grid-cols-[60px_auto_1fr] items-center ">
             <div className="flex items-center flex-col ">
               <span className="text-sm ">{task.time}h</span>
-              <Badge
-                className="bg-projeto-RoxoClaro font-normal px-1.5 py-0 text-[10px]"
-                size={10}
-              >
+              <Badge className="bg-projeto-RoxoClaro hover:bg-projeto-RoxoClaro font-normal px-1.5 py-0 text-[10px]">
                 {task.activitys}
               </Badge>
             </div>
@@ -30,12 +27,12 @@ const CardsMyTasks = () => {
               <p>{task.description}</p>
             </div>
             <div className="text-right mr-1">
-              <Button className="px-2 mr-1 bg-green-700/75 size-7">
+              <Button className="px-2 mr-1 bg-green-700/60 size-7">
                 <Check />
               </Button>
               <Button
                 onClick={() => removeTask(task.id)}
-                className="px-2 py-1 bg-red-700/75 size-7"
+                className="px-2 py-1 bg-red-700/60 size-7"
               >
                 <X />
               </Button>

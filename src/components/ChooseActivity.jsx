@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { CircleUserRound, ListChecks } from 'lucide-react';
-import Data from './Data';
 import CardsChooseActivity from './CardsChooseActivity';
 
 const ChooseActivity = () => {
