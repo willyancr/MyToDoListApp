@@ -21,7 +21,7 @@ const CalenderPicker = () => {
         <Button
           variant={'outline'}
           className={cn(
-            'w-[320px] justify-start text-left font-normal',
+            'min-w-full justify-start text-left font-normal',
             !date && 'text-muted-foreground',
           )}
         >
@@ -35,7 +35,7 @@ const CalenderPicker = () => {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[320px] p-0 " align="start">
+      <PopoverContent className="w-[320px]" align="start">
         <Calendar
           mode="single"
           selected={date}
