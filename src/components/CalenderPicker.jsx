@@ -35,7 +35,7 @@ const CalenderPicker = () => {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[320px]" align="start">
+      <PopoverContent className="min-w-max" align="start">
         <Calendar
           mode="single"
           selected={date}
