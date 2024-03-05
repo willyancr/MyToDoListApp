@@ -11,7 +11,7 @@ const Header = () => {
   const { tasks } = useTask();
 
   const date = new Date();
-  const dateFormated = format(date, 'dd MMMM', {
+  const dateFormated = format(date, `dd 'de' MMMM`, {
     locale: ptBR,
   });
 
