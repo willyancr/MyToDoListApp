@@ -13,10 +13,10 @@ import {
 } from '@/components/ui/popover';
 
 const CalenderPicker = () => {
-  const [date, setDate] = React.useState(new Date());
+  const [date, setDate] = React.useState();
 
   return (
-    <Popover className="">
+    <Popover>
       <PopoverTrigger asChild>
         <Button
           variant={'outline'}
@@ -27,17 +27,16 @@ const CalenderPicker = () => {
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? (
-            <span>Selecione uma data</span>
-          ) : (
             format(date, 'PPP', {
               locale: ptBR,
             })
+          ) : (
+            <span>Selecione uma data</span>
           )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[320px] p-0 " align="start">
         <Calendar
-          className="text-red"
           mode="single"
           selected={date}
           onSelect={setDate}

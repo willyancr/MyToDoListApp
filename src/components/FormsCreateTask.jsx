@@ -50,7 +50,11 @@ const FormsCreateTask = () => {
           value={calendar}
           onChange={(e) => setCalendar(e.target.value)}
         /> */}
-        <CalenderPicker />
+        <CalenderPicker
+          // className="rounded-md "
+          value={calendar}
+          onChange={(e) => setCalendar(e.target.value)}
+        />
         {activitySelected && (
           <Card
             className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-4 static"
