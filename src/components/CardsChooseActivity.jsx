@@ -6,7 +6,8 @@ import { useTask } from '@/TaskContext';
 
 const CardsChooseActivity = () => {
   const { activitys, icons } = useActivitys();
-  const { handleActivity } = useTask();
+  const { handleActivity, countTasks } = useTask();
+
   return (
     <main className="pt-6 px-5">
       {activitys.map((activity) => (
@@ -22,7 +23,9 @@ const CardsChooseActivity = () => {
             <div className="grid grid-cols-2 items-center">
               <div>
                 <h3 className="text-xl font-bold">{activity.name}</h3>
-                <p className="text-projeto-CinzaClaro">5 atividades</p>
+                <p className="text-projeto-CinzaClaro">
+                  {countTasks(activity.name)}
+                </p>
               </div>
               <div className="text-projeto-Roxo justify-self-end ">
                 <ChevronRight size={30} />

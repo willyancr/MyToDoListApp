@@ -8,6 +8,27 @@ export const TaskProvider = ({ children }) => {
   const [activitySelected, setActivitySelected] = React.useState(null);
   const navigate = useNavigate();
 
+  //Quantidade de tarefas por atividade
+  const qtdActivity = (tasksList) => {
+    const activitys = tasksList.map((task) => task.activitys);
+    const total = activitys.reduce((acc, item) => {
+      acc[item] = (acc[item] || 0) + 1;
+      return acc;
+    }, {});
+    return total;
+  };
+  //Contagem de tarefas
+  const countTasks = (activityName) => {
+    const count = qtdActivity(tasks);
+    const tasksCount = count[activityName] || 0;
+    if (tasksCount === 0) {
+      return `Sem Tarefa`;
+    } else if (tasksCount === 1) {
+      return `${tasksCount} Tarefa`;
+    }
+    return `${tasksCount} Tarefas`;
+  };
+  //Adicionar tarefa
   const addTask = (name, time, description, calendar, activitys) => {
     setTasks((prevTasks) => {
       const newTask = {
@@ -23,11 +44,12 @@ export const TaskProvider = ({ children }) => {
       return updatedTasks;
     });
   };
+  //Carregar tarefas
   React.useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(savedTasks);
   }, []);
-
+  //Remover tarefa
   const removeTask = (id) => {
     setTasks((prevTasks) => {
       const updatedTasks = prevTasks.filter((task) => task.id !== id);
@@ -35,6 +57,7 @@ export const TaskProvider = ({ children }) => {
       return updatedTasks;
     });
   };
+  //Selecionar atividade
   const handleActivity = (activity) => {
     setActivitySelected(activity);
     navigate('/atividade/criartarefa');
@@ -42,7 +65,15 @@ export const TaskProvider = ({ children }) => {
 
   return (
     <TaskContext.Provider
-      value={{ tasks, addTask, removeTask, activitySelected, handleActivity }}
+      value={{
+        qtdActivity,
+        countTasks,
+        tasks,
+        addTask,
+        removeTask,
+        activitySelected,
+        handleActivity,
+      }}
     >
       {children}
     </TaskContext.Provider>
