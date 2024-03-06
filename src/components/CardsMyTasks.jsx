@@ -24,7 +24,7 @@ const CardsMyTasks = () => {
             </div>
             <div className="truncate max-w-[170px] break-words pl-1">
               <h3 className="text-lg font-bold ">{task.name}</h3>
-              <p className="text-xs">{task.description}</p>
+              <p className="text-xs text-projeto-CinzaClaro">{task.description}</p>
             </div>
             <div className="text-right mr-1">
               <Button className="px-2 mr-1 bg-green-700/60 size-7">
