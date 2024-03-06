@@ -18,8 +18,8 @@ const CardsMyTasks = () => {
           <div className="grid grid-cols-[60px_auto_1fr] items-center ">
             <div className="flex items-center flex-col ">
               <span className="text-sm ">{task.time}h</span>
-              <Badge className="bg-projeto-RoxoClaro hover:bg-projeto-RoxoClaro w-14 font-normal py-0 text-[10px]">
-                {task.activitys}
+              <Badge className="flex flex-col bg-projeto-RoxoClaro hover:bg-projeto-RoxoClaro font-normal py-0 w-[50px] text-[9px]">
+                <span>{task.activitys}</span>
               </Badge>
             </div>
             <div className="truncate max-w-[170px] break-words pl-1">
