@@ -6,11 +6,11 @@ import { Badge } from '@/components/ui/badge';
 import { useTask } from '../TaskContext';
 
 const CardsMyTasks = () => {
-  const { tasks, removeTask } = useTask();
+  const { tasks, removeTask, tasksSorted } = useTask();
 
   return (
     <>
-      {tasks.map((task) => (
+      {tasksSorted.map((task) => (
         <Card
           key={task.id}
           className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-2"

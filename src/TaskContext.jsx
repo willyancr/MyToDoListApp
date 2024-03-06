@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TaskContext = React.createContext();
@@ -62,7 +62,18 @@ export const TaskProvider = ({ children }) => {
     setActivitySelected(activity);
     navigate('/atividade/criartarefa');
   };
-
+  //ordenar as tarefas em horarios crecentes
+  const tasksSorted = tasks.sort((a, b) => {
+    const timeA = parseInt(a.time);
+    const timeB = parseInt(b.time);
+    if (timeA < timeB) {
+      return -1;
+    } else if (timeA > timeB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
   return (
     <TaskContext.Provider
       value={{
@@ -73,6 +84,7 @@ export const TaskProvider = ({ children }) => {
         removeTask,
         activitySelected,
         handleActivity,
+        tasksSorted,
       }}
     >
       {children}
