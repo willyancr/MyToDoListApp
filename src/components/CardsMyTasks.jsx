@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { useTask } from '../TaskContext';
 
 const CardsMyTasks = () => {
-  const { tasks, removeTask, tasksSorted } = useTask();
+  const { removeTask, tasksSorted } = useTask();
 
   return (
     <>
@@ -18,7 +18,7 @@ const CardsMyTasks = () => {
           <div className="grid grid-cols-[60px_auto_1fr] items-center ">
             <div className="flex items-center flex-col ">
               <span className="text-sm ">{task.time}h</span>
-              <Badge className="bg-projeto-RoxoClaro hover:bg-projeto-RoxoClaro font-normal px-1.5 py-0 text-[10px]">
+              <Badge className="bg-projeto-RoxoClaro hover:bg-projeto-RoxoClaro font-normal py-0 text-[10px]">
                 {task.activitys}
               </Badge>
             </div>
