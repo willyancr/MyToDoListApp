@@ -2,15 +2,14 @@ import React from 'react';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useTask } from '../TaskContext';
-import Calendar from 'react-calendar';
 import { Card } from './ui/card';
 import { ChevronDown } from 'lucide-react';
 import { useActivitys } from './hooks/useActivitys';
 import CalenderPicker from './CalenderPicker';
+import { useTask } from '../TaskContext';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 const schema = yup.object({
   name: yup.string().min(3, 'Minimo de 3 caracteres'),
@@ -31,6 +30,7 @@ const FormsCreateTask = () => {
   const [name, setName] = React.useState('');
   const [time, setTime] = React.useState('');
   const [description, setDescription] = React.useState('');
+
   function handleCreateTask() {
     if (!name || !time || !description || !calendar) return;
     addTask(name, time, description, calendar, activitySelected.name);
@@ -45,13 +45,7 @@ const FormsCreateTask = () => {
       className="flex flex-col  pt-4 "
     >
       <div className="space-y-3 pb-4">
-        {/* <Calendar
-          className="rounded-md "
-          value={calendar}
-          onChange={(e) => setCalendar(e.target.value)}
-        /> */}
         <CalenderPicker
-          // className="rounded-md "
           value={calendar}
           onChange={(e) => setCalendar(e.target.value)}
         />
@@ -105,7 +99,7 @@ const FormsCreateTask = () => {
       </div>
       <Button
         type="submit"
-        className="bg-projeto-Roxo text-white text-xl hover:bg-projeto-RoxoClaro py-8"
+        className="bg-projeto-Roxo text-white text-xl hover:bg-projeto-RoxoClaro py-6"
       >
         Criar Tarefa
       </Button>

@@ -61,7 +61,7 @@ export const TaskProvider = ({ children }) => {
       return updatedDone;
     });
   };
-  //Remover tarefa
+  //Remover tarefa     
   const removeTask = (id) => {
     setTasks((prevTasks) => {
       const updatedRemove = prevTasks.filter((task) => task.id !== id);
