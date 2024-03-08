@@ -3,7 +3,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { ChevronDown } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useActivitys } from './hooks/useActivitys';
 import CalenderPicker from './CalenderPicker';
 import { useTask } from '../TaskContext';
@@ -45,13 +45,9 @@ const FormsCreateTask = () => {
       className="flex flex-col  pt-4 "
     >
       <div className="space-y-3 pb-4">
-        <CalenderPicker
-          value={calendar}
-          onChange={(e) => setCalendar(e.target.value)}
-        />
         {activitySelected && (
           <Card
-            className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-4 static"
+            className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-2 static"
             key={activitySelected.name}
           >
             <div className="grid grid-cols-[60px_auto] items-center gap-1">
@@ -63,13 +59,17 @@ const FormsCreateTask = () => {
                   <h3 className="text-xl font-bold">{activitySelected.name}</h3>
                 </div>
                 <div className="text-projeto-Roxo justify-self-end ">
-                  <ChevronDown size={30} />
+                  <Check />
                 </div>
               </div>
             </div>
           </Card>
         )}
-
+        <CalenderPicker
+          className="border-projeto-CinzaClaro/50 "
+          value={calendar}
+          onChange={(e) => setCalendar(e.target.value)}
+        />
         <Input
           {...register('name')}
           className="border-projeto-CinzaClaro/50 outline-none py-6"

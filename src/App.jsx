@@ -6,6 +6,7 @@ import ChooseActivity from './components/ChooseActivity';
 import CreateTask from './components/CreateTask';
 import { TaskProvider } from './TaskContext';
 import Footer from './components/Footer';
+import Statistics from './components/Statistics';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/atividade" element={<ChooseActivity />} />
             <Route path="/atividade/criartarefa" element={<CreateTask />} />
+            <Route path="/estatisticas" element={<Statistics />} />
           </Routes>
           <Footer />
         </TaskProvider>

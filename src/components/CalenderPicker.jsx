@@ -21,7 +21,7 @@ const CalenderPicker = () => {
         <Button
           variant={'outline'}
           className={cn(
-            'min-w-full justify-start text-left font-normal',
+            'min-w-full justify-start text-left font-normal border-projeto-CinzaClaro/50 outline-none py-6',
             !date && 'text-muted-foreground',
           )}
         >
