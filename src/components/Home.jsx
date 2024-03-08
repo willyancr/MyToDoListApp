@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Header className="fixed w-full z-50 top-0" />
-      <main className="min-h-screen mt-[180px]">
+      <main className="min-h-screen mt-[160px]">
         <Data />
         <MyTasks />
       </main>

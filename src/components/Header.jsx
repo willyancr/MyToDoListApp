@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useTask } from '../TaskContext';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import SvgComponent from '@/image/Waves-header';
 
 const Header = () => {
   const { tasks } = useTask();
@@ -24,28 +25,28 @@ const Header = () => {
     return `${tasks.length} Tarefas`;
   };
   return (
-    <div className="fixed w-full z-50 top-0">
-      <Card className="border-none ">
-        <CardHeader className="bg-gradient-to-r from-projeto-Roxo to-projeto-RoxoClaro h-auto py-8 text-white">
-          <div className="flex items-center justify-between pb-8">
-            {/* <img src="./src/image/logo1.png" alt="" className="w-14" /> */}
-            <ListChecks size={28} />
-            <p className="text-xl">{dateFormated}</p>
-            <CircleUserRound size={28} />
+    <div className="fixed w-full z-50 top-0 ">
+      <div className="relative ">
+        <SvgComponent />
+      </div>
+      <div className="absolute w-full top-0 p-4">
+        <div className="flex items-center justify-between pb-8">
+          <ListChecks size={28} />
+          <p className="text-xl">{dateFormated}</p>
+          <CircleUserRound size={28} />
+        </div>
+        <div className="flex items-center justify-between ">
+          <div>
+            <p className="text-2xl">Hoje</p>
+            <p className="text-xs">{todayTasks(tasks)}</p>
           </div>
-          <div className="flex items-center justify-between ">
-            <div>
-              <p className="text-2xl">Hoje</p>
-              <p className="text-xs">{todayTasks(tasks)}</p>
-            </div>
-            <Link to="/atividade">
-              <Button className="bg-white text-projeto-Roxo hover:bg-white">
-                Nova tarefa
-              </Button>
-            </Link>
-          </div>
-        </CardHeader>
-      </Card>
+          <Link to="/atividade">
+            <Button className="bg-white text-projeto-Roxo hover:bg-white">
+              Nova tarefa
+            </Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
