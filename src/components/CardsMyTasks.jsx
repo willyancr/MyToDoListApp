@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { useTask } from '../TaskContext';
 
 const CardsMyTasks = () => {
-  const { removeTask, tasksSorted } = useTask();
+  const { removeTask, doneTask, tasksSorted } = useTask();
 
   return (
     <>
@@ -24,18 +24,32 @@ const CardsMyTasks = () => {
             </div>
             <div className="truncate max-w-[170px] break-words pl-1">
               <h3 className="text-lg font-bold ">{task.name}</h3>
-              <p className="text-xs text-projeto-CinzaClaro">{task.description}</p>
+              <p className="text-xs text-projeto-CinzaClaro">
+                {task.description}
+              </p>
             </div>
             <div className="text-right mr-1">
-              <Button className="px-2 mr-1 bg-green-700/60 size-7">
-                <Check />
-              </Button>
-              <Button
-                onClick={() => removeTask(task.id)}
-                className="px-2 py-1 bg-red-700/60 size-7"
-              >
-                <X />
-              </Button>
+              {!task.isCompleted ? (
+                <>
+                  <Button
+                    onClick={() => doneTask(task.id)}
+                    className="px-2 mr-1 bg-green-700/60 size-7"
+                  >
+                    <Check />
+                  </Button>
+                  <Button
+                    onClick={() => removeTask(task.id)}
+                    className="px-2 mr-1 bg-red-700/60 size-7"
+                  >
+                    <X />
+                  </Button>
+                </>
+              ) : (
+                <div className="flex flex-col font-bold text-projeto-CinzaClaro">
+                  <span>Tarefa</span>
+                  <span>Concluída</span>
+                </div>
+              )}
             </div>
           </div>
         </Card>

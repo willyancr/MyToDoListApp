@@ -38,6 +38,7 @@ export const TaskProvider = ({ children }) => {
         description,
         calendar,
         activitys,
+        isCompleted: false,
       };
       const updatedTasks = [...prevTasks, newTask];
       localStorage.setItem('tasks', JSON.stringify(updatedTasks));
@@ -49,12 +50,23 @@ export const TaskProvider = ({ children }) => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(savedTasks);
   }, []);
+
+  // Completar tarefa
+  const doneTask = (id) => {
+    setTasks((prevTasks) => {
+      const updatedDone = prevTasks.map((task) =>
+        task.id === id ? { ...task, isCompleted: !task.isCompleted } : task,
+      );
+      localStorage.setItem('tasks', JSON.stringify(updatedDone));
+      return updatedDone;
+    });
+  };
   //Remover tarefa
   const removeTask = (id) => {
     setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.filter((task) => task.id !== id);
-      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-      return updatedTasks;
+      const updatedRemove = prevTasks.filter((task) => task.id !== id);
+      localStorage.setItem('tasks', JSON.stringify(updatedRemove));
+      return updatedRemove;
     });
   };
   //Selecionar atividade
@@ -74,6 +86,7 @@ export const TaskProvider = ({ children }) => {
       return 0;
     }
   });
+
   return (
     <TaskContext.Provider
       value={{
@@ -82,6 +95,7 @@ export const TaskProvider = ({ children }) => {
         tasks,
         addTask,
         removeTask,
+        doneTask,
         activitySelected,
         handleActivity,
         tasksSorted,
