@@ -28,7 +28,8 @@ const Header = () => {
       <div className="absolute w-full top-0 p-4">
         <div className="flex items-center justify-between pb-8">
           {/* <ListChecks size={28} /> */}
-          <img src="./src/image/lista-de-tarefas.png" alt="" />
+          {/* <img src="./src/image/lista-de-tarefas.png" alt="" /> */}
+          <Logo />
           <p className="text-xl">My ToDo List</p>
           <CircleUserRound size={28} />
         </div>
