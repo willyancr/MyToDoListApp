@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader } from './ui/card';
-import { CircleUserRound, ListChecks } from 'lucide-react';
+import { CircleUserRound, ListChecks, SquareUserRound } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { useTask } from '../TaskContext';
@@ -25,13 +25,12 @@ const Header = () => {
       <div className="relative ">
         <SvgComponent />
       </div>
-      <div className="absolute w-full top-0 p-4">
+      <div className="absolute w-full top-0 p-5">
         <div className="flex items-center justify-between pb-8">
-          {/* <ListChecks size={28} /> */}
-          {/* <img src="./src/image/lista-de-tarefas.png" alt="" /> */}
           <Logo />
-          <p className="text-xl">My ToDo List</p>
-          <CircleUserRound size={28} />
+          <p className="text-2xl logo">My ToDo List</p>
+          {/* <CircleUserRound size={28} /> */}
+          {/* <SquareUserRound /> */}
         </div>
         <div className="flex items-center justify-between ">
           <div>
