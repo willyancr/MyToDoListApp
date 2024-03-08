@@ -1,11 +1,7 @@
 import React from 'react';
-import { Card, CardHeader } from './ui/card';
-import { CircleUserRound, ListChecks, SquareUserRound } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { useTask } from '../TaskContext';
-import { format } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
 import SvgComponent from '@/image/Waves-header';
 import Logo from '@/image/Logo';
 
@@ -28,9 +24,7 @@ const Header = () => {
       <div className="absolute w-full top-0 p-5">
         <div className="flex items-center justify-between pb-8">
           <Logo />
-          <p className="text-2xl logo">My ToDo List</p>
-          {/* <CircleUserRound size={28} /> */}
-          {/* <SquareUserRound /> */}
+          <p className="text-2xl logo text-projeto-CinzaEscuro">My ToDo List</p>
         </div>
         <div className="flex items-center justify-between ">
           <div>
