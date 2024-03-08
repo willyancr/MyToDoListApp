@@ -7,6 +7,7 @@ import { useTask } from '../TaskContext';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import SvgComponent from '@/image/Waves-header';
+import Logo from '@/image/Logo';
 
 const Header = () => {
   const { tasks } = useTask();
@@ -26,7 +27,8 @@ const Header = () => {
       </div>
       <div className="absolute w-full top-0 p-4">
         <div className="flex items-center justify-between pb-8">
-          <ListChecks size={28} />
+          {/* <ListChecks size={28} /> */}
+          <img src="./src/image/lista-de-tarefas.png" alt="" />
           <p className="text-xl">My ToDo List</p>
           <CircleUserRound size={28} />
         </div>
