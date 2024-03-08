@@ -83,6 +83,7 @@ const FormsCreateTask = () => {
         <Input
           {...register('time')}
           className="border-projeto-CinzaClaro/50 outline-none py-6"
+          placeholder="Nome da Tarefa"
           type="time"
           id="time"
           value={time}
