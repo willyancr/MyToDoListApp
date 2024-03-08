@@ -11,11 +11,6 @@ import SvgComponent from '@/image/Waves-header';
 const Header = () => {
   const { tasks } = useTask();
 
-  const date = new Date();
-  const dateFormated = format(date, `dd 'de' MMMM`, {
-    locale: ptBR,
-  });
-
   const todayTasks = (tasks) => {
     if (tasks.length === 0) {
       return `Sem Tarefa`;
@@ -32,7 +27,7 @@ const Header = () => {
       <div className="absolute w-full top-0 p-4">
         <div className="flex items-center justify-between pb-8">
           <ListChecks size={28} />
-          <p className="text-xl">{dateFormated}</p>
+          <p className="text-xl">My ToDo List</p>
           <CircleUserRound size={28} />
         </div>
         <div className="flex items-center justify-between ">
