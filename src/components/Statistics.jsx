@@ -9,7 +9,7 @@ const Statistics = () => {
         <div className="relative">
           <SvgWaves />
         </div>
-        <div className="flex items-center justify-between absolute w-full top-0 p-5">
+        <div className="flex items-center justify-between absolute w-full top-0 p-5 py-9">
           <PieChart size={28} />
           <p className="font-semibold text-xl">Estatísticas</p>
           <CircleUserRound size={28} />
@@ -17,7 +17,7 @@ const Statistics = () => {
       </header>
       <main>
 
-        
+
       </main>
     </>
   );

@@ -10,7 +10,7 @@ const ChooseActivity = () => {
         <div className="relative">
           <SvgWaves />
         </div>
-        <div className="flex items-center justify-between absolute w-full top-0 p-5">
+        <div className="flex items-center justify-between absolute w-full top-0 p-5 py-9">
           <ListChecks size={28} />
           <p className="font-semibold text-xl">Atividades</p>
           <CircleUserRound size={28} />

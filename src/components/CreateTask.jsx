@@ -12,7 +12,7 @@ const CreateTask = () => {
         <div className="relative">
           <SvgWaves />
         </div>
-        <div className="flex items-center justify-between absolute w-full top-0 p-5">
+        <div className="flex items-center justify-between absolute w-full top-0 p-5 py-9">
           <Link to="/atividade">
             <ArrowLeft size={28} />
           </Link>
