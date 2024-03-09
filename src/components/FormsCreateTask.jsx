@@ -89,7 +89,7 @@ const FormsCreateTask = () => {
           onChange={(e) => setTime(e.target.value)}
           placeholder="Digite a hora da tarefa..."
         />
-        <Clock className="text-projeto-CinzaClaro/75 absolute top-[125px] right-5" />
+        <Clock className="text-projeto-CinzaClaro/75 absolute top-[210px] right-5" />
         <Textarea
           {...register('description')}
           className="border-projeto-CinzaClaro/50 outline-none "
