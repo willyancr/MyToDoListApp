@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, CardContent } from './ui/card';
 import { ArrowLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';

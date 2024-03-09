@@ -15,7 +15,10 @@ const Statistics = () => {
           <CircleUserRound size={28} />
         </div>
       </header>
-      <main></main>
+      <main>
+
+        
+      </main>
     </>
   );
 };

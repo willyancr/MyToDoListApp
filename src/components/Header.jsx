@@ -3,8 +3,7 @@ import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { useTask } from '../TaskContext';
 import SvgComponent from '@/image/Waves-header';
-import Logo from '@/image/Logo';
-import { Home, CircleUserRound, SquareUserRound } from 'lucide-react';
+import { Home, CircleUserRound } from 'lucide-react';
 
 const Header = () => {
   const { tasks } = useTask();

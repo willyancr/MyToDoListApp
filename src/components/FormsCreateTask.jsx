@@ -3,7 +3,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Check } from 'lucide-react';
+import { Check, Clock } from 'lucide-react';
 import { useActivitys } from './hooks/useActivitys';
 import CalenderPicker from './CalenderPicker';
 import { useTask } from '../TaskContext';
@@ -82,13 +82,13 @@ const FormsCreateTask = () => {
         <span className="text-red-500 text-sm m-0">{errors.name?.message}</span>
         <Input
           {...register('time')}
-          className="border-projeto-CinzaClaro/50 outline-none py-6"
-          placeholder="Nome da Tarefa"
+          className="border-projeto-CinzaClaro/50 outline-none py-6 relative"
           type="time"
           id="time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
         />
+        <Clock className="text-projeto-CinzaClaro/75 absolute top-[267px] right-7" />
         <Textarea
           {...register('description')}
           className="border-projeto-CinzaClaro/50 outline-none "
