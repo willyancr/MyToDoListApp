@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTask } from '../TaskContext';
 import SvgComponent from '@/image/Waves-header';
 import Logo from '@/image/Logo';
+import { Home, CircleUserRound, SquareUserRound } from 'lucide-react';
 
 const Header = () => {
   const { tasks } = useTask();
@@ -21,14 +22,15 @@ const Header = () => {
       <div className="relative ">
         <SvgComponent />
       </div>
-      <div className="absolute w-full top-0 p-5">
+      <div className="absolute w-full top-0 p-5 text-projeto-CinzaEscuro">
         <div className="flex items-center justify-between pb-8">
-          <Logo />
-          <p className="text-2xl logo text-projeto-CinzaEscuro">My ToDo List</p>
+          <Home size={28} />
+          <p className="text-2xl logo ">My ToDo List</p>
+          <CircleUserRound size={28} />
         </div>
         <div className="flex items-center justify-between ">
           <div>
-            <p className="text-2xl">Hoje</p>
+            <p className="text-2xl font-bold">Hoje</p>
             <p className="text-xs">{todayTasks(tasks)}</p>
           </div>
           <Link to="/atividade">
