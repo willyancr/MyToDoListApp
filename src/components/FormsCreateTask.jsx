@@ -82,7 +82,7 @@ const FormsCreateTask = () => {
         <span className="text-red-500 text-sm m-0">{errors.name?.message}</span>
         <Input
           {...register('time')}
-          className="border-projeto-CinzaClaro/50 outline-none py-6 relative"
+          className="border-projeto-CinzaClaro/50 outline-none py-6 "
           type="time"
           id="time"
           value={time}
