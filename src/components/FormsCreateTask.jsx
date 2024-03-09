@@ -44,7 +44,7 @@ const FormsCreateTask = () => {
       onSubmit={handleSubmit(handleCreateTask)}
       className="flex flex-col  pt-4 "
     >
-      <div className="space-y-3 pb-4">
+      <div className="space-y-3 pb-4 relative">
         {activitySelected && (
           <Card
             className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-4 mb-2 static"
@@ -89,7 +89,7 @@ const FormsCreateTask = () => {
           onChange={(e) => setTime(e.target.value)}
           placeholder="Digite a hora da tarefa..."
         />
-        <Clock className="text-projeto-CinzaClaro/75 absolute top-[267px] right-7" />
+        <Clock className="text-projeto-CinzaClaro/75 absolute top-[125px] right-5" />
         <Textarea
           {...register('description')}
           className="border-projeto-CinzaClaro/50 outline-none "
