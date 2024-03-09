@@ -1,8 +1,16 @@
 import React from 'react';
-import { CircleUserRound, PieChart } from 'lucide-react';
+import {
+  CircleUserRound,
+  LineChart,
+  PieChart,
+  CheckCircleIcon,
+} from 'lucide-react';
 import SvgWaves from '@/image/Waves';
+import { Card } from './ui/card';
+import { useTask } from '../TaskContext';
 
 const Statistics = () => {
+  const { tasks, countCompletedTasks } = useTask();
   return (
     <>
       <header className="fixed w-full z-50 top-0 text-projeto-CinzaEscuro">
@@ -15,9 +23,37 @@ const Statistics = () => {
           <CircleUserRound size={28} />
         </div>
       </header>
-      <main>
-
-
+      <main className="min-h-screen mt-[150px] px-4">
+        <Card className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4 static">
+          <div className="grid grid-cols-[60px_auto] items-center gap-2 ">
+            <div className="text-projeto-Roxo justify-self-center">
+              <LineChart size={38} />
+            </div>
+            <div className="grid grid-cols-1 items-center">
+              <div>
+                <h3 className="text-xl font-bold">Total de tarefas</h3>
+                <p className="text-xl text-projeto-CinzaClaro">
+                  {tasks.length}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Card>
+        <Card className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-4 static">
+          <div className="grid grid-cols-[60px_auto] items-center gap-2 ">
+            <div className="text-projeto-Roxo justify-self-center">
+              <CheckCircleIcon size={38} />
+            </div>
+            <div className="grid grid-cols-1 items-center">
+              <div>
+                <h3 className="text-xl font-bold">Tarefas completas</h3>
+                <p className="text-xl text-projeto-CinzaClaro">
+                  {countCompletedTasks()}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Card>
       </main>
     </>
   );

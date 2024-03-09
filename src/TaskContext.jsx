@@ -61,6 +61,13 @@ export const TaskProvider = ({ children }) => {
       return updatedDone;
     });
   };
+
+  //Contagem de tarefas completas
+  const countCompletedTasks = () => {
+    const completedTasks = tasks.filter((task) => task.isCompleted);
+    return completedTasks.length;
+  }
+
   //Remover tarefa     
   const removeTask = (id) => {
     setTasks((prevTasks) => {
@@ -99,6 +106,7 @@ export const TaskProvider = ({ children }) => {
         activitySelected,
         handleActivity,
         tasksSorted,
+        countCompletedTasks,
       }}
     >
       {children}
