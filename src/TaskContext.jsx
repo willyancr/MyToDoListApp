@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TaskContext = React.createContext();
@@ -66,9 +66,9 @@ export const TaskProvider = ({ children }) => {
   const countCompletedTasks = () => {
     const completedTasks = tasks.filter((task) => task.isCompleted);
     return completedTasks.length;
-  }
+  };
 
-  //Remover tarefa     
+  //Remover tarefa
   const removeTask = (id) => {
     setTasks((prevTasks) => {
       const updatedRemove = prevTasks.filter((task) => task.id !== id);
