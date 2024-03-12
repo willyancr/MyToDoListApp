@@ -21,7 +21,7 @@ const CardsMyTasks = () => {
         <ModalCards
           selectedTask={selectedTask}
           open={openModal}
-          onOpenChange={setOpenModal}
+          setOpenModal={setOpenModal}
         />
       )}
 

@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/dialog';
 import { useTask } from '../TaskContext';
 
-const ModalCards = ({ selectedTask, open, onOpenChange }) => {
+const ModalCards = ({ selectedTask, open, setOpenModal }) => {
   const { removeTask, doneTask } = useTask();
 
   function handleCloseModal() {
-    onOpenChange(false);
+    setOpenModal(false);
   }
 
   function handleDoneTask() {
@@ -29,7 +29,7 @@ const ModalCards = ({ selectedTask, open, onOpenChange }) => {
   return (
     <>
       {!selectedTask.isCompleted && (
-        <Dialog open={open} onOpenChange={onOpenChange}>
+        <Dialog open={open} onOpenChange={setOpenModal}>
           <DialogTrigger asChild></DialogTrigger>
           <DialogContent className="max-w-[325px] rounded-md">
             <DialogHeader className="text-left">
