@@ -40,13 +40,13 @@ const ModalCards = ({ selectedTask, open, onOpenChange }) => {
             </DialogHeader>
             <div className="flex justify-center gap-3">
               <Button
-                className="bg-green-700/70 w-1/2"
+                className="bg-green-700/60 w-1/2"
                 onClick={handleDoneTask}
               >
                 Confirmar
               </Button>
               <Button
-                className="bg-red-700/70 w-1/2 outline-none"
+                className="bg-red-700/60 w-1/2 outline-none"
                 onClick={handleRemoveTask}
               >
                 Remover
