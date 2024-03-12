@@ -1,17 +1,33 @@
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { Card } from './ui/card';
-import { Button } from './ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useTask } from '../TaskContext';
+import ModalCards from './ModalCards';
 
 const CardsMyTasks = () => {
-  const { removeTask, doneTask, tasksSorted } = useTask();
+  const { tasksSorted } = useTask();
+  const [selectedTask, setSelectedTask] = React.useState(null);
+  const [openModal, setOpenModal] = React.useState(false);
+
+  function handleClickModal(task) {
+    setSelectedTask(task);
+    setOpenModal(true);
+  }
 
   return (
     <>
+      {selectedTask && (
+        <ModalCards
+          selectedTask={selectedTask}
+          open={openModal}
+          onOpenChange={setOpenModal}
+        />
+      )}
+      
       {tasksSorted.map((task) => (
         <Card
+          onClick={() => handleClickModal(task)}
           key={task.id}
           className="bg-projeto-Rosa text-projeto-CinzaEscuro text-sm px-2 py-2 mb-2"
         >
@@ -28,28 +44,8 @@ const CardsMyTasks = () => {
                 {task.description}
               </p>
             </div>
-            <div className="text-right mr-1">
-              {!task.isCompleted ? (
-                <>
-                  <Button
-                    onClick={() => doneTask(task.id)}
-                    className="px-2 mr-1 bg-green-700/60 size-7"
-                  >
-                    <Check />
-                  </Button>
-                  <Button
-                    onClick={() => removeTask(task.id)}
-                    className="px-2 mr-1 bg-red-700/60 size-7"
-                  >
-                    <X />
-                  </Button>
-                </>
-              ) : (
-                <div className="flex flex-col font-bold text-projeto-CinzaClaro">
-                  <span>Tarefa</span>
-                  <span>Concluída</span>
-                </div>
-              )}
+            <div className="flex items-center justify-end mr-2 text-projeto-RoxoClaro/70">
+              <Info />
             </div>
           </div>
         </Card>
