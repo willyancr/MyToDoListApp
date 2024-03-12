@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info } from 'lucide-react';
+import { Info, CheckCircleIcon } from 'lucide-react';
 import { Card } from './ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTask } from '../TaskContext';
@@ -24,7 +24,7 @@ const CardsMyTasks = () => {
           onOpenChange={setOpenModal}
         />
       )}
-      
+
       {tasksSorted.map((task) => (
         <Card
           onClick={() => handleClickModal(task)}
@@ -44,8 +44,14 @@ const CardsMyTasks = () => {
                 {task.description}
               </p>
             </div>
-            <div className="flex items-center justify-end mr-2 text-projeto-RoxoClaro/70">
-              <Info />
+            <div className="flex justify-end mr-2 text-projeto-RoxoClaro/70">
+              {!task.isCompleted ? (
+                <Info size={28} />
+              ) : (
+                <div className="flex flex-col font-bold text-green-700/60">
+                  <CheckCircleIcon size={26} />
+                </div>
+              )}
             </div>
           </div>
         </Card>
