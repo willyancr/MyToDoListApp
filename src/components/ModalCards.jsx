@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -14,32 +13,49 @@ import { useTask } from '../TaskContext';
 const ModalCards = ({ selectedTask, open, onOpenChange }) => {
   const { removeTask, doneTask } = useTask();
 
+  function handleCloseModal() {
+    onOpenChange(false);
+  }
+
+  function handleDoneTask() {
+    doneTask(selectedTask.id);
+    handleCloseModal();
+  }
+  function handleRemoveTask() {
+    removeTask(selectedTask.id);
+    handleCloseModal();
+  }
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogTrigger asChild></DialogTrigger>
-      <DialogContent className="max-w-[325px] rounded-md">
-        <DialogHeader className="text-left">
-          <DialogTitle>{selectedTask.name}</DialogTitle>
-          <DialogDescription>{selectedTask.description}</DialogDescription>
-        </DialogHeader>
-        <div className="flex justify-center gap-3">
-          <Button
-            className="bg-green-700/70 w-1/2"
-            type="submit"
-            onClick={() => doneTask(selectedTask.id)}
-          >
-            Confirmar
-          </Button>
-          <Button
-            className="bg-red-700/70 w-1/2"
-            type="submit"
-            onClick={() => removeTask(selectedTask.id)}
-          >
-            Remover
-          </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
+    <>
+      {!selectedTask.isCompleted && (
+        <Dialog open={open} onOpenChange={onOpenChange}>
+          <DialogTrigger asChild></DialogTrigger>
+          <DialogContent className="max-w-[325px] rounded-md">
+            <DialogHeader className="text-left">
+              <DialogTitle className="text-xl">{selectedTask.name}</DialogTitle>
+              <DialogDescription className="text-base">
+                {selectedTask.description}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-center gap-3">
+              <Button
+                className="bg-green-700/70 w-1/2"
+                onClick={handleDoneTask}
+              >
+                Confirmar
+              </Button>
+              <Button
+                className="bg-red-700/70 w-1/2 outline-none"
+                onClick={handleRemoveTask}
+              >
+                Remover
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
   );
 };
 
