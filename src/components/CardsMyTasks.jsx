@@ -38,9 +38,9 @@ const CardsMyTasks = () => {
                 <span>{task.activitys}</span>
               </Badge>
             </div>
-            <div className="truncate max-w-[190px] break-words pl-1">
+            <div className="truncate max-w-[190px] break-words pl-1 ">
               <h3 className="text-lg font-bold ">{task.name}</h3>
-              <p className="text-xs text-projeto-CinzaClaro">
+              <p className="text-xs text-projeto-CinzaClaro truncate">
                 {task.description}
               </p>
             </div>

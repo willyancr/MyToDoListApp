@@ -32,21 +32,22 @@ const ModalCards = ({ selectedTask, open, setOpenModal }) => {
         <Dialog open={open} onOpenChange={setOpenModal}>
           <DialogTrigger asChild></DialogTrigger>
           <DialogContent className="max-w-[325px] rounded-md">
-            <DialogHeader className="text-left">
+            <DialogHeader className="text-left mb-4">
               <DialogTitle className="text-xl">{selectedTask.name}</DialogTitle>
-              <DialogDescription className="text-base">
+              <DialogDescription className="text-base break-words max-w-[280px]">
                 {selectedTask.description}
               </DialogDescription>
             </DialogHeader>
             <div className="flex justify-center gap-3">
               <Button
-                className="bg-green-700/60 w-1/2"
+                className="bg-projeto-Roxo/90 hover:bg-projeto-Roxo w-1/2 outline-none"
                 onClick={handleDoneTask}
               >
                 Confirmar
               </Button>
               <Button
-                className="bg-red-700/60 w-1/2 outline-none"
+                variant="outline"
+                className=" w-1/2 outline-none"
                 onClick={handleRemoveTask}
               >
                 Remover
