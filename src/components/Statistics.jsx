@@ -35,7 +35,7 @@ const Statistics = () => {
             </div>
             <div className="grid grid-cols-1 items-center">
               <h3 className="text-xl font-bold">Total de tarefas</h3>
-              <p className="text-xl text-projeto-CinzaClaro">{tasks.length}</p>
+              <p className="text-xl text-projeto-CinzaClaro">0{tasks.length}</p>
             </div>
           </div>
         </Card>
@@ -47,7 +47,7 @@ const Statistics = () => {
             <div className="grid grid-cols-1 items-center">
               <h3 className="text-xl font-bold">Tarefas completas</h3>
               <p className="text-xl text-projeto-CinzaClaro">
-                {countCompletedTasks()}
+                0{countCompletedTasks()}
               </p>
             </div>
           </div>
