@@ -2,6 +2,7 @@
 * [Descrição](#descrição)
 * [Funcionalidades](#funcionalidades)
 * [Tecnologias](#tecnologias)
+* [Licença](#licença)
 
 # To-Do List App
 
@@ -31,7 +32,12 @@ E que utiliza as seguintes tecnologias:
 
 **Front-end:** Vite, React, JavaScript, TailwindCSS, Shadcn
 
+
 **Back-end:** Sem back-end (aplicação estática)
 
 **Deploy:** Vercel
+
+## Licença
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/willyancr/MyToDoListApp/tree/main?tab=MIT-1-ov-file)
 
