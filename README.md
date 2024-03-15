@@ -1,5 +1,7 @@
 ## Índice
 * [Descrição](#descrição)
+* [Funcionalidades](#funcionalidades)
+* [Tecnologias](#tecnologias)
 
 # To-Do List App
 
