@@ -1,3 +1,6 @@
+## Índice
+* [Descrição](#descrição)
+
 # To-Do List App
 
 Este é um aplicativo web **mobile** de lista de tarefas desenvolvido com Vite, React, JavaScript, Tailwind CSS e Shadcn.
