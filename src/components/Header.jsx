@@ -17,9 +17,9 @@ const Header = () => {
     return `${tasks.length} Tarefas`;
   };
   return (
-    <div className="fixed w-full z-50 top-0 ">
+    <div className="fixed w-full z-50 top-0 desktop">
       <div className="relative ">
-        <SvgComponent />
+        <SvgComponent/>
       </div>
       <div className="absolute w-full top-0 p-5 text-projeto-CinzaEscuro">
         <div className="flex items-center justify-between pb-8">

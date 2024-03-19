@@ -10,7 +10,7 @@ import Statistics from './components/Statistics';
 
 function App() {
   return (
-    <div>
+    <div className="desktop">
       <BrowserRouter>
         <TaskProvider>
           <Routes>

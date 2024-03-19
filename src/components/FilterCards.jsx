@@ -6,15 +6,15 @@ import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
 const FilterCards = ({ search, setSearch, filter, setFilter }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 relative">
       <div className="flex items-center justify-between">
         <Input
-          className="pl-10 relative border-projeto-CinzaClaro/50 outline-none py-5"
+          className="pl-10  border-projeto-CinzaClaro/50 outline-none py-5"
           placeholder="Pesquisar tarefas..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Search className="absolute left-7 text-projeto-CinzaClaro/75" />
+        <Search className="absolute left-2 text-projeto-CinzaClaro/75" />
       </div>
       <RadioGroup
         className="flex items-center justify-between mt-4"

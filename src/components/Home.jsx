@@ -4,7 +4,7 @@ import MyTasks from './MyTasks';
 
 const Home = () => {
   return (
-    <div>
+    <div className=''>
       <Header className="fixed w-full z-50 top-0" />
       <main className="min-h-screen mt-[160px]">
         <MyTasks />

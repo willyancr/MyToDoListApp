@@ -5,8 +5,8 @@ import SvgWaves from '@/image/Waves';
 
 const ChooseActivity = () => {
   return (
-    <>
-      <header className="fixed w-full z-50 top-0 text-projeto-CinzaEscuro">
+    <div>
+      <header className="fixed w-full z-50 top-0 text-projeto-CinzaEscuro desktop">
         <div className="relative">
           <SvgWaves />
         </div>
@@ -20,7 +20,7 @@ const ChooseActivity = () => {
         <h2 className=" pt-4 px-5 text-xl font-bold">Escolha uma atividade</h2>
         <CardsChooseActivity />
       </main>
-    </>
+    </div>
   );
 };
 

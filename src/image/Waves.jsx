@@ -6,8 +6,9 @@ function SvgWaves(props) {
       style={{
         transition: '.3s',
         height: '150px',
+        
       }}
-      viewBox="0 0 1440 490"
+      viewBox="0 0 1920 490"
       xmlns="http://www.w3.org/2000/svg"
       transform="rotate(180)"
       {...props}

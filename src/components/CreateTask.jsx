@@ -8,7 +8,7 @@ import SvgWaves from '@/image/Waves';
 const CreateTask = () => {
   return (
     <>
-      <header className="fixed w-full z-50 top-0 text-projeto-CinzaEscuro">
+      <header className="fixed w-full z-50 top-0 text-projeto-CinzaEscuro desktop">
         <div className="relative">
           <SvgWaves />
         </div>
