@@ -3,12 +3,11 @@ import { Search } from 'lucide-react';
 import { Input } from './ui/input';
 import { Switch } from './ui/switch';
 import { Label } from './ui/label';
+import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
-const FilterCards = ({ search, setSearch }) => {
-  const [completas, setCompletas] = React.useState(false);
-  const [incompletas, setIncompletas] = React.useState(false);
+const FilterCards = ({ search, setSearch, filter, setFilter }) => {
   return (
-    <div className='mb-4'>
+    <div className="mb-4">
       <div className="flex items-center justify-between">
         <Input
           className="pl-10 relative border-projeto-CinzaClaro/50 outline-none py-5"
@@ -18,16 +17,42 @@ const FilterCards = ({ search, setSearch }) => {
         />
         <Search className="absolute left-7 text-projeto-CinzaClaro/75" />
       </div>
-      <div className="flex gap-4 py-3 ">
-        <div className="flex items-center gap-2">
-          <Switch id="completas" />
-          <Label htmlFor="completas">Completas</Label>
+      <RadioGroup
+        className="flex items-center justify-between mt-4"
+        defaultValue={filter}
+        onValueChange={setFilter}
+      >
+        <div className="flex items-center gap-1">
+          <RadioGroupItem value="all" id="all" />
+          <Label
+            htmlFor="all"
+            className="text-projeto-CinzaClaro/75"
+            value="all"
+          >
+            Todas
+          </Label>
         </div>
-        <div className="flex items-center gap-2">
-          <Switch id="incompletas" />
-          <Label htmlFor="incompletas">Incompletas</Label>
+        <div className="flex items-center gap-1">
+          <RadioGroupItem value="completas" id="completas" />
+          <Label
+            htmlFor="completas"
+            className="text-projeto-CinzaClaro/75"
+            value="completas"
+          >
+            Completas
+          </Label>
         </div>
-      </div>
+        <div className="flex items-center gap-1">
+          <RadioGroupItem value="incompletas" id="incompletas" />
+          <Label
+            htmlFor="incompletas"
+            className="text-projeto-CinzaClaro/75"
+            value="incompletas"
+          >
+            Incompletas
+          </Label>
+        </div>
+      </RadioGroup>
     </div>
   );
 };

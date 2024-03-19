@@ -11,6 +11,7 @@ const CardsMyTasks = () => {
   const [selectedTask, setSelectedTask] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
   const [search, setSearch] = React.useState('');
+  const [filter, setFilter] = React.useState('all');
 
   function handleClickModal(task) {
     setSelectedTask(task);
@@ -26,11 +27,23 @@ const CardsMyTasks = () => {
           setOpenModal={setOpenModal}
         />
       )}
-      <FilterCards search={search} setSearch={setSearch} />
+      <FilterCards
+        search={search}
+        setSearch={setSearch}
+        filter={filter}
+        setFilter={setFilter}
+      />
       <h2 className="pb-2 text-xl font-bold">Minhas Tarefas</h2>
       {tasksSorted
         .filter((task) =>
           task.name.toLowerCase().includes(search.toLowerCase()),
+        )
+        .filter((task) =>
+          filter === 'all'
+            ? true
+            : filter === 'completas'
+            ? task.isCompleted
+            : !task.isCompleted,
         )
         .map((task) => (
           <Card
