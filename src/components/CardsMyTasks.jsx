@@ -41,7 +41,7 @@ const CardsMyTasks = () => {
         .filter((task) =>
           filter === 'all'
             ? true
-            : filter === 'completas'
+            : filter === 'completed'
             ? task.isCompleted
             : !task.isCompleted,
         )

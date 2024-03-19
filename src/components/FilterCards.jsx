@@ -1,7 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Input } from './ui/input';
-import { Switch } from './ui/switch';
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
@@ -33,21 +32,21 @@ const FilterCards = ({ search, setSearch, filter, setFilter }) => {
           </Label>
         </div>
         <div className="flex items-center gap-1">
-          <RadioGroupItem value="completas" id="completas" />
+          <RadioGroupItem value="completed" id="completed" />
           <Label
-            htmlFor="completas"
+            htmlFor="completed"
             className="text-projeto-CinzaClaro/75"
-            value="completas"
+            value="completed"
           >
             Completas
           </Label>
         </div>
         <div className="flex items-center gap-1">
-          <RadioGroupItem value="incompletas" id="incompletas" />
+          <RadioGroupItem value="incompleted" id="incompleted" />
           <Label
-            htmlFor="incompletas"
+            htmlFor="incompleted"
             className="text-projeto-CinzaClaro/75"
-            value="incompletas"
+            value="incompleted"
           >
             Incompletas
           </Label>
