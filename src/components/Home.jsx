@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <Header className="fixed w-full z-50 top-0" />
       <main className="min-h-screen mt-[160px]">
-        <FilterCards />
+        {/* <FilterCards /> */}
         <MyTasks />
       </main>
     </div>

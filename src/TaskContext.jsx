@@ -50,7 +50,6 @@ export const TaskProvider = ({ children }) => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(savedTasks);
   }, []);
-
   // Completar tarefa
   const doneTask = (id) => {
     setTasks((prevTasks) => {
@@ -61,13 +60,11 @@ export const TaskProvider = ({ children }) => {
       return updatedDone;
     });
   };
-
   //Contagem de tarefas completas
   const countCompletedTasks = () => {
     const completedTasks = tasks.filter((task) => task.isCompleted);
     return completedTasks.length;
   };
-
   //Remover tarefa
   const removeTask = (id) => {
     setTasks((prevTasks) => {
