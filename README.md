@@ -23,7 +23,6 @@ E que utiliza as seguintes tecnologias:
 
 - Adicionar, editar e remover tarefas.
 - Marcar tarefas como concluídas.
-- Ordenar tarefas por data de criação.
 - Filtrar tarefas por status (concluídas/não concluídas).
 - Estatísticas
 
